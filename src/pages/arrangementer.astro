@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import { site } from '../lib/site.config';
+---
+
+<BaseLayout title={`Arrangementer — ${site.name}`} description="Konserter, middager og spesielle kvelder på Åspaviljongen i Drammen.">
+  <Header slot="header" />
+
+  <Hero
+    eyebrow="Hva skjer?"
+    headline="Våre"
+    headlineAccent="arrangementer"
+    subtext="Middager, konserter og spesielle kvelder gjennom hele året."
+  />
+
+  <!-- Åsfest -->
+  <section class="py-24 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 md:p-12 rounded-2xl bg-primary text-white">
+        <p class="text-accent text-xs font-medium uppercase tracking-[0.25em] mb-4">Nytt i 2026</p>
+        <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-4">Åsfest 2026</h2>
+        <p class="text-white/70 text-lg mb-6">
+          Årets største nye happening! En musikkfestival fra 22. til 25. mai 
+          med lokale og nasjonale musikere på byens flotteste lokasjon.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          <div class="p-4 rounded-xl bg-white/10">
+            <h3 class="font-semibold mb-2">Artister</h3>
+            <ul class="text-white/60 text-sm space-y-1">
+              <li>Øystein Greni</li>
+              <li>Daniel Kvammen</li>
+              <li>Trond Granlund</li>
+              <li>Undertakers Circus</li>
+              <li>…og flere!</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-xl bg-white/10">
+            <h3 class="font-semibold mb-2">Praktisk info</h3>
+            <ul class="text-white/60 text-sm space-y-1">
+              <li>📅 22. – 25. mai 2026</li>
+              <li>📍 Åspaviljongen, Drammen</li>
+              <li>📧 {site.email}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Andre arrangementer -->
+  <section class="py-24 bg-surface border-t border-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-12 text-center">Kommende arrangementer</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          icon="🎵"
+          title="Livekvelder"
+          description="Jevnlige konserter med lokale og nasjonale artister. Følg oss på Facebook for oppdateringer."
+        />
+        <Card
+          icon="🍷"
+          title="Temamiddager"
+          description="Spesielle middager med set-menyer fra 1 til 8 retter. Varierer gjennom sesongen."
+        />
+      </div>
+      <div class="text-center mt-12">
+        <p class="text-muted">
+          Følg oss på <a href="https://www.facebook.com/aspaviljongen" class="text-primary hover:text-primary-light transition-colors underline" target="_blank" rel="noopener">Facebook</a> 
+          for oppdatert program, eller kontakt oss på 
+          <a href={`mailto:${site.email}`} class="text-primary hover:text-primary-light transition-colors underline">{site.email}</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

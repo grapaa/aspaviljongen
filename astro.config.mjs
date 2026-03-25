@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   // GitHub Pages URL
   site: 'https://grapaa.github.io',
-  base: '/staticpage-template',
+  base: '/aspaviljongen',
   vite: {
     plugins: [tailwindcss()],
   },

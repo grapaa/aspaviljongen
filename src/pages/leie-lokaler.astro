@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import { site } from '../lib/site.config';
+---
+
+<BaseLayout title={`Leie lokaler — ${site.name}`} description="Lei Åspaviljongen til private selskap, møter og seminarer.">
+  <Header slot="header" />
+
+  <Hero
+    eyebrow="Ditt neste selskap"
+    headline="Leie"
+    headlineAccent="lokaler"
+    subtext="Åspaviljongen kan leies helt eller delvis til private selskap, møter og seminarer."
+    primaryCta={{ label: 'Send forespørsel', href: '/leie-lokaler' }}
+  />
+
+  <section class="py-24 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-12 text-center">Perfekt for enhver anledning</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <Card
+          icon="💒"
+          title="Bryllup & jubileer"
+          description="Feire den store dagen i unike omgivelser med profesjonell service og skreddersydd meny."
+        />
+        <Card
+          icon="🎂"
+          title="Bursdager & fester"
+          description="Private selskap i landlige og sjarmerende lokaler med plass til både små og store grupper."
+        />
+        <Card
+          icon="💼"
+          title="Møter & seminarer"
+          description="Inspirer teamet i en unik setting utenfor kontoret — med god mat og service."
+        />
+        <Card
+          icon="🎄"
+          title="Julebord"
+          description="Tradisjonsrike julebord med set-meny og god stemning i historiske omgivelser."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontaktskjema -->
+  <section class="py-24 bg-surface border-t border-border">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-4 text-center">Send forespørsel</h2>
+      <p class="text-muted text-center mb-12">
+        Fortell oss om ditt arrangement, så tar vi kontakt med priser og tilgjengelighet.
+      </p>
+
+      <div class="p-8 rounded-2xl border border-border bg-background text-center">
+        <p class="text-muted mb-6">
+          Send oss en e-post med detaljer om dato, antall gjester og type arrangement.
+        </p>
+        <a
+          href={`mailto:${site.email}?subject=Forespørsel om leie av lokaler`}
+          class="inline-flex items-center px-8 py-4 text-sm font-medium bg-primary text-white rounded-full hover:bg-primary-light transition-all duration-200"
+        >
+          📧 {site.email}
+        </a>
+        <p class="text-muted text-sm mt-6">
+          Vi svarer normalt innen 1–2 virkedager.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

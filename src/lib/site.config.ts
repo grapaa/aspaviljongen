@@ -3,25 +3,26 @@
  * Edit this file first after forking the template.
  */
 export const site = {
-  name: 'Static Page Template',
-  tagline: 'Fork. Prompt. Ship.',
+  name: 'Åspaviljongen',
+  tagline: 'Drammens landlige storstue siden 1898',
   description:
-    'A production-ready Astro 6 template for building static customer websites with AI-assisted vibecoding.',
-  url: 'https://grapaa.github.io/staticpage-template',
-  locale: 'en',
-  email: 'hello@example.com',
-  location: 'Your City, Country',
+    'Restaurant og eventlokale i naturskjønne omgivelser på Åssiden i Drammen. Sesongbaserte retter, selskapsutleie og arrangementer.',
+  url: 'https://grapaa.github.io/aspaviljongen',
+  locale: 'no',
+  email: 'post@aspaviljongen.no',
+  location: 'Åssiden, Drammen',
 
   /** Navigation links — rendered in Header and Footer */
   nav: [
-    { label: 'Getting Started', href: '/getting-started' },
-    { label: 'Features', href: '/features' },
-    { label: 'Prompts', href: '/prompts' },
+    { label: 'Om oss', href: '/om-oss' },
+    { label: 'Meny', href: '/meny' },
+    { label: 'Arrangementer', href: '/arrangementer' },
+    { label: 'Leie lokaler', href: '/leie-lokaler' },
   ],
 
   /** Primary CTA shown in Header and Hero */
   cta: {
-    label: 'Get started',
-    href: '/getting-started',
+    label: 'Kontakt oss',
+    href: '/leie-lokaler',
   },
 } as const;

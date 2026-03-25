@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import { site } from '../lib/site.config';
+---
+
+<BaseLayout title={`Meny — ${site.name}`} description="Sesongbaserte retter fra kjøkkensjef Jonatan. Lunsj, kafé og set-menyer.">
+  <Header slot="header" />
+
+  <Hero
+    eyebrow="Mat & drikke"
+    headline="Vår"
+    headlineAccent="meny"
+    subtext="Sesongbaserte retter med fokus på gode råvarer, rene smaker og estetikk."
+  />
+
+  <!-- Lunsjmeny -->
+  <section class="py-24 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-12 text-center">Lunsjmeny</h2>
+      
+      <div class="space-y-6">
+        {[
+          { name: 'Grønnsalat', desc: 'Kikerter, ertemole og curry', price: '195,-' },
+          { name: 'Kyllingsalat', desc: 'Bacon, fritert surdeig og Holtefjell xo', price: '229,-' },
+          { name: 'Skagensandwich', desc: 'Agurk, ørretrogn og dill', price: '245,-' },
+          { name: 'Karbonade sandwich', desc: 'Speilegg, ertestuing, karamelisert løk og majones', price: '245,-' },
+          { name: 'Fiskesuppe', desc: 'Dagens fangst, brød og smør', price: '265,-' },
+          { name: 'Ostekake krem', desc: 'Tindved, marengs og bær', price: '139,-' },
+        ].map((item) => (
+          <div class="flex items-baseline justify-between py-4 border-b border-border group">
+            <div>
+              <h3 class="font-display text-lg font-semibold text-text group-hover:text-primary transition-colors">{item.name}</h3>
+              <p class="text-muted text-sm mt-1">{item.desc}</p>
+            </div>
+            <span class="font-display text-lg font-semibold text-primary ml-4 shrink-0">{item.price}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Kafé -->
+  <section class="py-24 bg-surface border-t border-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-12 text-center">Kafé</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="p-8 rounded-2xl border border-border bg-background">
+          <h3 class="font-display text-xl font-semibold text-text mb-2">Drammenspølse</h3>
+          <p class="text-muted text-sm mb-3">Med brød eller lompe</p>
+          <span class="font-display text-lg font-semibold text-primary">42,-</span>
+        </div>
+        <div class="p-8 rounded-2xl border border-border bg-background">
+          <h3 class="font-display text-xl font-semibold text-text mb-2">Vaffelplate</h3>
+          <p class="text-muted text-sm mb-3">Pisket fløte, hjemmelaget jordbærsyltetøy, brunost og Rørossmør</p>
+          <span class="font-display text-lg font-semibold text-primary">65,-</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Set-meny info -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl font-semibold text-white mb-6">Set-menyer på kveldstid</h2>
+      <p class="text-white/65 text-lg mb-6">
+        Utenfor sesong serverer vi set-menyer fra 1 til 8 retter. Menyene varierer gjennom året.
+      </p>
+      <p class="text-white/50">
+        Kontakt oss på <a href={`mailto:${site.email}`} class="text-accent hover:text-accent-light transition-colors underline">{site.email}</a> for dagens meny.
+      </p>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

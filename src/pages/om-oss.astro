@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import { site } from '../lib/site.config';
+---
+
+<BaseLayout title={`Om oss — ${site.name}`} description="Historien bak Åspaviljongen — Drammens landlige storstue siden 1898.">
+  <Header slot="header" />
+
+  <Hero
+    eyebrow="Vår historie"
+    headline="Byens landlige"
+    headlineAccent="storstue"
+    subtext="Gjennom mer enn 125 år har Åspaviljongen vært et samlingspunkt for feiring, fellesskap og gode smaker i Drammen."
+  />
+
+  <section class="py-24 bg-background">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="prose prose-lg max-w-none">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="font-display text-3xl font-semibold text-text mb-6">Siden 1898</h2>
+            <p class="text-muted leading-relaxed mb-4">
+              Åspaviljongen ligger vakkert til på Åssiden i Drammen og har vært byens landlige storstue i over 125 år. 
+              Med sin unike beliggenhet, varme atmosfære og fokus på kvalitet er dette stedet for dem som setter pris på det gode liv.
+            </p>
+            <p class="text-muted leading-relaxed mb-4">
+              Enten du kommer innom for en kaffekopp i helgen, deltar på et av våre arrangementer, 
+              eller feirer en spesiell anledning — vi strekker oss hele veien for at din opplevelse skal bli den beste.
+            </p>
+          </div>
+          <div class="p-8 rounded-2xl bg-surface border border-border">
+            <h3 class="font-display text-xl font-semibold text-text mb-4">Kontakt</h3>
+            <ul class="space-y-3 text-muted">
+              <li class="flex items-center gap-3">
+                <span class="text-xl">📧</span>
+                <a href={`mailto:${site.email}`} class="text-primary hover:text-primary-light transition-colors">{site.email}</a>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-xl">📍</span>
+                <span>{site.location}</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="text-xl">🏳️</span>
+                <span class="italic">Alltid åpent når flagget er heist</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kjøkkensjefen -->
+  <section class="py-24 bg-surface border-t border-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-3xl font-semibold text-text mb-8 text-center">Sjefen for de gode smaker</h2>
+      <div class="max-w-2xl mx-auto text-center">
+        <p class="text-muted leading-relaxed mb-4">
+          <strong class="text-text">Jonatan Bukkøy-Tindholm Arntzen</strong> er medeier, kreativ leder og sjef over alt som smaker godt på Åspaviljongen. 
+          Han er også medeier på Ask & Loke i Drammen og har lang fartstid på noen av Norges fremste kjøkken.
+        </p>
+        <p class="text-muted leading-relaxed mb-4">
+          Maaemo ***, Fiskekompaniet, Cornelius på Holmen, Oro by Terje Ness *, 
+          Onda by Pal & Ness, Palmen Grand Hotell — listen er imponerende.
+        </p>
+        <p class="text-muted leading-relaxed italic">
+          Grunnsteinene i Jonatans menyer er gode råvarer, rene smaker, bærekraft og estetikk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
